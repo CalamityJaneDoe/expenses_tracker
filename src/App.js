@@ -4,36 +4,42 @@ import NewExpense from "./components/NewExpense/NewExpense";
 const App = () => {
   const expenses = [
     {
-      id: 'e1',
+      id: "e1",
       title: "Car Insurance",
       amount: 249.17,
-      date: new Date(2023, 2, 28)
+      date: new Date(2023, 2, 28),
     },
     {
-      id: 'e2',
+      id: "e2",
       title: "Books",
-      amount: 125.50,
-      date: new Date(2023, 2, 15)
+      amount: 125.5,
+      date: new Date(2023, 2, 15),
     },
     {
-      id: 'e3',
+      id: "e3",
       title: "Concert tickets",
       amount: 86.12,
-      date: new Date(2023, 2, 5)
+      date: new Date(2023, 2, 5),
     },
     {
-      id: 'e4',
+      id: "e4",
       title: "Beauty products",
       amount: 368.56,
-      date: new Date(2023, 2, 1)
+      date: new Date(2023, 2, 1),
     },
-  ]
+  ];
+
+  const addExpenseHandler = (expense) => {
+    console.log('in App.js');
+    console.log(expense);
+  };
+
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses data={expenses} />
     </div>
   );
-}
+};
 
 export default App;
